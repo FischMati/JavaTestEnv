@@ -43,13 +43,4 @@ public class NotificationService {
     public void shutDownNotifications() {
         executorService.shutdown();
     }
-
-
-
-    public void processAllSurplusNotifications() throws InterruptedException {
-        while(!surplusNotificationsQueue.isEmpty()){
-            UUID surplusUuid = surplusNotificationsQueue.take();
-            logger.warning("Surplus detected for product inventory with UUID " + surplusUuid);  
-        }
-    }
 }
